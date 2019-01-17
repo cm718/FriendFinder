@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "An app to help you find a friend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cm718/FriendFinder.git"
+  },
+  "author": "Chris McLaughlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cm718/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/cm718/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
