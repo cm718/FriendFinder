@@ -28,13 +28,16 @@ module.exports = (app) => {
             let thisFriend = friendsData[i];
             totalDifference = 0;
 
+            // Loop through the scores of the friends in friends.js
+            // Save the data to new variables
             for (let j = 0; j < thisFriend.scores.length; j++) {
                 let userScore = userScores[j];
                 let thisFriendScore = thisFriend.scores[j];
 
-
+                // Calculate the absolute difference between the friend and user scores
                 totalDifference += Math.abs(parseInt(userScore) - parseInt(thisFriendScore));
             }
+            // If the total difference is smaller than the current best match then update to become the best match.
             if (totalDifference <= bestMatch.difference) {
                 bestMatch.name = thisFriend.name;
                 bestMatch.photo = thisFriend.photo;
