@@ -25,7 +25,7 @@ module.exports = (app) => {
 
         // Loop through the other friends' data
         for (let i = 0; i < friendsData.length; i++) {
-            let thisFriend = friends[i];
+            let thisFriend = friendsData[i];
             totalDifference = 0;
 
             for (let j = 0; j < thisFriend.scores.length; j++) {
