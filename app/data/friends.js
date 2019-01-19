@@ -1,5 +1,5 @@
-
-const friendsData = [
+// Declare the variable for the array of data
+let friendsData = [
     {
         "name": "Chris",
         "photo": "https://images.google.com",
@@ -7,4 +7,5 @@ const friendsData = [
     }
 ];
 
+// Export the friendsData array to make it available in other docs
 module.exports = friendsData;
