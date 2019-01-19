@@ -1,6 +1,6 @@
 // Require in my dependencies
 const express = require('express');
-const mysql = require('mysql');
+const path = require('path');
 // Assign express() and create server
 const app = express(); 
 
@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Require in the api and html routes 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./app/routes/apiRoutes.js")(app);
+require("./app/routes/htmlRoutes.js")(app);
 
 // Tell the PORT to listen
 app.listen(PORT, ()=> {
