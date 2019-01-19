@@ -35,11 +35,17 @@ module.exports = (app) => {
 
                 totalDifference += Math.abs(parseInt(userScore) - parseInt(thisFriendScore));
             }
+            if (totalDifference <= bestMatch.difference) {
+                bestMatch.name = thisFriend.name;
+                bestMatch.photo = thisFriend.photo;
+                bestMatch.difference = totalDifference;
+            }
         }
 
-        // Push in new data from the request body
-        friendsData.push(req.body);
-        // Response of friendsData
-        res.json(friendsData);
+        // Push in new data from the user
+        friendsData.push(userData);
+
+        // Return of JSON of bestMatch data
+        res.json(bestMatch);
     });
 };
