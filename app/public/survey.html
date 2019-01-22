@@ -151,21 +151,27 @@ crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 crossorigin="anonymous"></script>
 
+<!-- Javascript needed to grab user data and send it to the correct routes -->
 <script type="text/javascript">
     $(".submit").on("click", (event) => {
         event.preventDefault();
        let values = [];
-       
+        // Loop through the 10 questions to grab the values entered
         for (let i = 1; i <= 10; i++){
             let val = $(`#q${i}`).val();
+            // Push the values into the values array
             values.push(val);
         }
-
+        
         let submittedData = {
             name: "",
             photo: "",
             values: values
         };
+        // Collect the name and photo and add it to the object
+        submittedData.name = $("#name").val().trim();
+        submittedData.photo = $("#photo").val().trim();
+
         $.post("/api/friends", submittedData, (result) => {
             console.log(result);
         });
